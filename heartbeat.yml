@@ -1,0 +1,16 @@
+heartbeat.monitors:
+- name: Todos
+  id: todos
+  type: browser
+  schedule: "@every 1m"
+  source:
+    zip_url: 
+      url: "https://github.com/elastic/synthetics/archive/refs/heads/master.zip"
+      folder: "examples/todos"
+
+// Sample ES output options, override these with whatever is appropriate for your environment
+// or use the cloud.id / cloud.auth options instead
+output.elasticsearch:
+    hosts: localhost:9200
+    username: elastic
+    password: changeme
