@@ -19,7 +19,7 @@ elastic-synthetics synthetics-tests
 
 ## Running via `Heartbeat`
 
-Invoke the synthetic test suites using heartbeat with the following heartbeat.yml:
+Invoke the synthetic test suites using heartbeat with the following `heartbeat.yml`:
 
 ```yaml
 heartbeat.monitors:
