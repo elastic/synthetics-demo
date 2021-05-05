@@ -17,7 +17,7 @@ jobs:
         with:
          node-version: '14'
       - run: npm install
-      - run: SYNTHETICS_JUNIT_FILE='junit-synthetics.xml' npx @elastic/synthetics . --reporter=junit
+      - run: "SYNTHETICS_JUNIT_FILE='junit-synthetics.xml' npx @elastic/synthetics . --reporter=junit --suite-params='{\"url\": \"http://localhost:8080\"}'"
         continue-on-error: true
       - run: cat junit-*.xml
       - name: Publish JUnit Test Report
