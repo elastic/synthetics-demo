@@ -5,7 +5,7 @@ on:
   schedule:
     - cron:  '*/15 * * * *'
 jobs:
-  Synthetics test:
+  synthetics_test:
     runs-on: ubuntu-latest
     steps:
       - run: npm i -g @elastic/synthetics
