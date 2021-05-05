@@ -10,7 +10,7 @@ jobs:
     steps:
       - run: npm i -g @elastic/synthetics
       - run: cd synthetics-tests && npm install
-      - run: elastic-synthetics . --reporter=junit > ../junit.xml
+      - run: SYNTHETICS_JUNIT_FILE='junit.xml' npx @elastic/synthetics . --reporter=junit
       - name: Publish JUnit Test Report
         uses: mikepenz/action-junit-report@v2
         with:
