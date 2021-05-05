@@ -8,7 +8,6 @@ jobs:
   synthetics_test:
     runs-on: ubuntu-latest
     steps:
-      - run: npm i -g @elastic/synthetics
       - run: cd synthetics-tests && npm install
       - run: SYNTHETICS_JUNIT_FILE='junit.xml' npx @elastic/synthetics . --reporter=junit
       - name: Publish JUnit Test Report
