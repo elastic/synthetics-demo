@@ -18,6 +18,7 @@ jobs:
          node-version: '14'
       - run: npm install
       - run: SYNTHETICS_JUNIT_FILE='junit.xml' npx @elastic/synthetics . --reporter=junit
+        continue-on-error: true
       - name: Publish JUnit Test Report
         uses: mikepenz/action-junit-report@v2
         with:
