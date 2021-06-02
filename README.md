@@ -29,8 +29,8 @@ heartbeat.monitors:
   schedule: "@every 1m"
   source:
     zip_url: 
-      url: "https://github.com/elastic/synthetics/archive/refs/heads/master.zip"
-      folder: "examples/todos"
+      url: "https://github.com/elastic/synthetics-demo/archive/refs/heads/main.zip"
+      folder: "synthetics-tests"
 
 // Sample ES output options, override these with whatever is appropriate for your environment
 // or use the cloud.id / cloud.auth options instead
