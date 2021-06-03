@@ -3,7 +3,6 @@ import { deepStrictEqual } from 'assert';
 import { join } from 'path';
 
 journey('check if title is present', ({ page, params }) => {
-  console.log("PARAMS", params)
   step('launch app', async () => {
     await page.goto(params.url);
   });
