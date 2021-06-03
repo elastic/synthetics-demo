@@ -2,6 +2,7 @@
   id: todos
   type: browser
   schedule: "@every 3m"
+  tags: todos-app
   params:
     url: "https://elastic.github.io/synthetics-demo/"
   source:
