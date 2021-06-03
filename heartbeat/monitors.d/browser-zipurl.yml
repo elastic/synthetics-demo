@@ -1,8 +1,0 @@
-- name: Todos
-  id: todos
-  type: browser
-  schedule: "@every 3m"
-  source:
-    zip_url: 
-      url: "https://github.com/elastic/synthetics-demo/archive/refs/heads/main.zip"
-      folder: "synthetics-tests"
