@@ -19,23 +19,4 @@ elastic-synthetics synthetics-tests
 
 ## Running via `Heartbeat`
 
-Invoke the synthetic test suites using heartbeat with the following heartbeat.yml:
-
-```yaml
-heartbeat.monitors:
-- name: Todos
-  id: todos
-  type: browser
-  schedule: "@every 1m"
-  source:
-    zip_url: 
-      url: "https://github.com/elastic/synthetics-demo/archive/refs/heads/main.zip"
-      folder: "synthetics-tests"
-
-// Sample ES output options, override these with whatever is appropriate for your environment
-// or use the cloud.id / cloud.auth options instead
-output.elasticsearch:
-    hosts: localhost:9200
-    username: elastic
-    password: changeme
-```
+Invoke the synthetic test suites by entering the `heartbeat` folder, then running `./run.sh CLOUD_ID CLOUD_AUTH` using your actual Elastic cloud ID / Auth values
