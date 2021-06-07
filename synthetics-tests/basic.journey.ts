@@ -33,6 +33,6 @@ journey('check if footer exists', ({ page, params }) => {
   });
 
   step('assert footer', async () => {
-    await page.textContent('p:has-text("Double-click to edit a todo")')
+    await page.textContent('p:has-text("Double-click to edit a todooo")')
   });
 });
