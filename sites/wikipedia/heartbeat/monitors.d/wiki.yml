@@ -1,0 +1,11 @@
+- name: Wiki
+  id: wiki
+  type: browser
+  schedule: "@every 3m"
+  tags: wikipedia
+  params:
+    url: "https://elastic.github.io/synthetics-demo/"
+  source:
+    zip_url: 
+      url: "https://github.com/andrewvc/synthetics-demo/archive/refs/heads/extra-sites.zip"
+      folder: "synthetics-tests"
