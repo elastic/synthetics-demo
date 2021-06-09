@@ -5,6 +5,7 @@
   tags: todos-app
   params:
     url: "https://elastic.github.io/synthetics-demo/"
+  synthetics_args: ["--capability", "trace", "metrics", "filmstrips", "ssblocks"]
   source:
     zip_url: 
       url: "https://github.com/elastic/synthetics-demo/archive/refs/heads/main.zip"

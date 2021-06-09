@@ -2,6 +2,7 @@
   id: wiki
   type: browser
   schedule: "@every 5m"
+  synthetics_args: ["--capability", "trace", "metrics", "filmstrips", "ssblocks"]
   tags: wikipedia
   source:
     zip_url: 

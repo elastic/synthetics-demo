@@ -2,6 +2,7 @@
   enabled: true
   id: my-monitor
   name: My Monitor
+  synthetics_args: ["--capability", "trace", "metrics", "filmstrips", "ssblocks"]
   source:
     inline:
       script:
