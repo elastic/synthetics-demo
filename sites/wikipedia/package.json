@@ -5,6 +5,6 @@
   "scripts": {},
   "license": "MIT",
   "dependencies": {
-    "@elastic/synthetics": "^1.0.0-beta"
+    "@elastic/synthetics": "file:///home/andrewvc/projects/synthetics"
   }
 }
