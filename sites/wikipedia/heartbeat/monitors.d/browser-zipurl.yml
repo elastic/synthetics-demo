@@ -3,9 +3,9 @@
   type: browser
   schedule: "@every 3m"
   tags: todos-app
+  synthetics_args: ["--capability", "trace", "metrics", "filmstrips", "ssblocks"]
   params:
     url: "https://elastic.github.io/synthetics-demo/"
-  synthetics_args: ["--capability", "trace", "metrics", "filmstrips", "ssblocks"]
   source:
     zip_url: 
       url: "https://github.com/elastic/synthetics-demo/archive/refs/heads/main.zip"

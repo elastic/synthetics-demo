@@ -1,0 +1,10 @@
+- name: Wiki
+  id: wiki
+  type: browser
+  schedule: "@every 5m"
+  synthetics_args: ["--capability", "trace", "metrics", "filmstrips", "ssblocks"]
+  tags: wikipedia
+  source:
+    zip_url: 
+      url: "https://github.com/andrewvc/synthetics-demo/archive/refs/heads/extra-sites.zip"
+      folder: "sites/wikipedia"

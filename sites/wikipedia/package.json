@@ -1,13 +1,10 @@
 {
-  "name": "todos",
+  "name": "wikipedia",
   "private": true,
   "description": "This suite tests the examples that ship with the open source Vue.js project.",
   "scripts": {},
   "license": "MIT",
   "dependencies": {
-    "@elastic/synthetics": "/home/andrewvc/projects/synthetics"
-  },
-  "devDependencies": {
-    "node-static": "^0.7.11"
+    "@elastic/synthetics": "file:///home/andrewvc/projects/synthetics"
   }
 }
