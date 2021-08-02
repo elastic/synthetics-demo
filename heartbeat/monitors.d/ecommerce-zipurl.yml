@@ -2,7 +2,7 @@
   id: hipster-ecommerce
   type: browser
   schedule: "@every 3m"
-  tags: todos-app
+  tags: ecommerce-app
   params:
     url: "https://elastic-synthetics.vercel.app/"
   source:
