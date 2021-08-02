@@ -26,3 +26,13 @@ journey('check if input placeholder is correct', ({ page, params }) => {
     );
   });
 });
+
+journey('check if footer exists', ({ page, params }) => {
+  step('launch app', async () => {
+    await page.goto(params.url);
+  });
+
+  step('assert footer', async () => {
+    await page.textContent('p:has-text("Double-click to edit a todooo")')
+  });
+});

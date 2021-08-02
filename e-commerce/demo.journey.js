@@ -30,7 +30,7 @@ journey(
       const recommendationsNode = await page.$('text=Products you might like');
       expect(recommendationsNode).toBeDefined();
       // Waits for recommendation product cards
-      const recommendedProducts = await page.$$('.container .card');
+      const recommendedProducts = await page.$$('.container .cardddd');
       expect(recommendedProducts.length).toBe(4);
     });
   }
