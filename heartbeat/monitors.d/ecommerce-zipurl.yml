@@ -4,7 +4,7 @@
   schedule: "@every 3m"
   tags: todos-app
   params:
-    url: "https://elastic.github.io/synthetics-demo/"
+    url: "https://elastic-synthetics.vercel.app/"
   source:
     zip_url: 
       url: "https://github.com/elastic/synthetics-demo/archive/refs/heads/main.zip"
