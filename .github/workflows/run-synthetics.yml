@@ -19,12 +19,13 @@ jobs:
       - run: npm install
       - run: "SYNTHETICS_JUNIT_FILE='junit-synthetics.xml' npx @elastic/synthetics . --reporter=junit"
         continue-on-error: true
-      - name: Publish JUnit Test Report
-        uses: mikepenz/action-junit-report@v2
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1.19
+        if: always()
         with:
-          report_paths: '**/junit-*.xml'
-          fail_on_failure: true
-          require_tests: true
+          files: '**/junit-*.xml'
+          fail_on: "test failures"
+          check_name: ECommerce Unit Tests
   todos_tests:
     runs-on: ubuntu-latest
     defaults:
@@ -38,9 +39,10 @@ jobs:
       - run: npm install
       - run: "SYNTHETICS_JUNIT_FILE='junit-synthetics.xml' npx @elastic/synthetics . --reporter=junit --suite-params='{\"url\": \"https://elastic.github.io/synthetics-demo/\"} '"
         continue-on-error: true
-      - name: Publish JUnit Test Report
-        uses: mikepenz/action-junit-report@v2
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1.19
+        if: always()
         with:
-          report_paths: '**/junit-*.xml'
-          fail_on_failure: true
-          require_tests: true
+          files: '**/junit-*.xml'
+          fail_on: "test failures"
+          check_name: Todos Unit Tests
