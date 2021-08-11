@@ -1,22 +1,9 @@
-# Example Elastic Synthetics Project
+# Synthetics Examples
 
-This suite tests the todo examples that ship with the open source Vue.js project, located in the 'app' directory.
+This repository contains examples of Elastic Synthetics configurations, and instructions for running them both locally, via CI, and via Heartbeat.
 
-## Running via `@elastic/synthetics`
+See the `todos` and `e-commerce` directories, and their respective `README` to find out more about each example.
 
-We can invoke the Synthetics runner from the CLI using the below steps
+We run the tests suites contained in each on all PRs and merges. See the `.github/workflows` directory to see sample CI configurations.
 
-```sh
-# Install the global command
-npm install -g @elastic/synthetics 
-
-# Install the local dependencies
-cd synthetics-tests && npm install; cd ..
-
-# Invoke the runner and show test results
-elastic-synthetics synthetics-tests
-```
-
-## Running via `Heartbeat`
-
-Invoke the synthetic test suites by entering the `heartbeat` folder, then running `./run.sh CLOUD_ID CLOUD_AUTH` using your actual Elastic cloud ID / Auth values
+For deploying via Heartbeat see the `heartbeat` folder.
