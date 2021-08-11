@@ -25,6 +25,7 @@ jobs:
         with:
           files: '**/junit-*.xml'
           fail_on: "test failures"
+          check_name: ECommerce Unit Tests
   todos_tests:
     runs-on: ubuntu-latest
     defaults:
@@ -44,3 +45,4 @@ jobs:
         with:
           files: '**/junit-*.xml'
           fail_on: "test failures"
+          check_name: Todos Unit Tests
