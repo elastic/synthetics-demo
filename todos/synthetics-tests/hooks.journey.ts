@@ -4,10 +4,13 @@ import { Server as StaticServer } from 'node-static';
 
 let srv: Server;
 
-beforeAll(async () => {
+beforeAll(async ({env}) => {
     const loc = (__dirname + "/../app");
     const ss = new(StaticServer)(loc);
 
+    if (env === "production") {
+        return
+    }
     return new Promise(isUp => {
         console.log(`Serving static app from ${loc}`)
         srv = createServer((req, res) => {
