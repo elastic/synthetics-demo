@@ -1,6 +1,5 @@
-import { journey, step } from '@elastic/synthetics';
+import { journey, step, expect } from '@elastic/synthetics';
 import { deepStrictEqual } from 'assert';
-import { join } from 'path';
 
 journey('check if title is present', ({ page, params }) => {
   step('launch app', async () => {
@@ -22,7 +21,17 @@ journey('check if input placeholder is correct', ({ page, params }) => {
     const input = await page.$('input.new-todo');
     deepStrictEqual(
       await input.getAttribute('placeholder'),
-      'What needs to be done?'
+      'What needs to be doneeee?'
     );
+  });
+});
+
+journey('check written by text', ({ page, params }) => {
+  step('launch app', async () => {
+    await page.goto(params.url);
+  })
+
+  step('assert written by', async () => {
+    await page.waitForSelector('text=Written by Evan You', {timeout: 1000})
   });
 });
