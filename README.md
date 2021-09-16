@@ -7,14 +7,14 @@ This suite tests the todo examples that ship with the open source Vue.js project
 We can invoke the Synthetics runner from the CLI using the below steps
 
 ```sh
-# Install the global command
-npm install -g @elastic/synthetics 
+# Enter the `synthetics-tests` directory
+cd synthetics-tests 
 
-# Install the local dependencies
-cd synthetics-tests && npm install; cd ..
+# Install synthetics dependencies
+npm install
 
 # Invoke the runner and show test results
-elastic-synthetics synthetics-tests
+npx @elastic/synthetics .
 ```
 
 ## Running via `Heartbeat`
