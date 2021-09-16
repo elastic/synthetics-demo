@@ -8,6 +8,9 @@ export default (env) => {
   return {
     params: {
       url,
+      devWebserver: {
+        port: 8080
+      }
     },
   };
 };
