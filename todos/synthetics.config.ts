@@ -5,8 +5,9 @@ export default (env) => {
   if (env === "production") {
     params.url = "https://elastic.github.io/synthetics-demo/"
   } else {
-    params.url = "http://localhost:8080";
-    params.devWebserver = {port: 8080}
+    const port = 8080;
+    params.url = `http://localhost:${8080}`;
+    params.devWebserver = {port};
   }
   return {params};
 };
