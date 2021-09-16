@@ -37,12 +37,11 @@ jobs:
         with:
           node-version: '12.22.3'
       - run: npm install
-      - run: "SYNTHETICS_JUNIT_FILE='junit-synthetics.xml' npx @elastic/synthetics . --reporter=junit --suite-params='{\"url\": \"https://elastic.github.io/synthetics-demo/\"} '"
-        continue-on-error: true
+      - run: "SYNTHETICS_JUNIT_FILE='junit-synthetics.xml' npx @elastic/synthetics . --reporter=junit --quiet-exit-code --params='{\"url\": \"https://elastic.github.io/synthetics-demo/\"} '"
       - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1.19
+        uses: EnricoMi/publish-unit-test-result-action@v1
         if: always()
         with:
           files: '**/junit-*.xml'
           fail_on: "test failures"
-          check_name: Todos Unit Tests
+          check_name: Todos Junit Results
