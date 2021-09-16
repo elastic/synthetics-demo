@@ -19,7 +19,7 @@ journey('check if input placeholder is correct', ({ page, params }) => {
   step('assert placeholder value', async () => {
     const input = await page.$('input.new-todo');
     expect(await input.getAttribute('placeholder')).toBe(
-      'What needs to be done?!'
+      'What needs to be done?'
     );
   });
 });
