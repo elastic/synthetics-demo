@@ -1,29 +1,22 @@
 import { beforeAll, afterAll } from '@elastic/synthetics';
+import { once } from 'events';
 import { createServer, Server } from 'http';
+import { join } from 'path';
 import { Server as StaticServer } from 'node-static';
 
 let srv: Server;
 
-beforeAll(async ({env, params}) => {
-    const loc = (__dirname + "/../app");
-    const ss = new(StaticServer)(loc);
+beforeAll(async ({params}) => {
+  const devWebserverPort = params.devWebserver?.port;
+  if (!devWebserverPort) {
+    return
+  }
 
-    const devWebserverPort = params.devWebserver?.port;
-    if (!devWebserverPort) {
-        return
-    }
-    return new Promise(isUp => {
-        srv = createServer((req, res) => {
-            req.addListener('end', () => {
-                ss.serve(req, res)
-            }).resume();
-        }).listen(devWebserverPort, undefined, undefined, () => {isUp()});
-        console.log(`Serving static app from ${loc} on localhost:${devWebserverPort}`)
-    });
-})
+  const file = new StaticServer(join(__dirname, '..', 'app'));
+  srv = createServer(file.serve.bind(file)).listen(devWebserverPort);
+  await once(srv, 'listening');
+});
 
 afterAll(async () => {
-    if (srv) {
-        await srv.close();
-    }
-})
+  srv && (await srv.close());
+});
