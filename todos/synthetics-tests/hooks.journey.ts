@@ -18,7 +18,7 @@ beforeAll(async ({env, params}) => {
                 ss.serve(req, res)
             }).resume();
         }).listen(devWebserverPort, undefined, undefined, () => {isUp()});
-        console.log(`Serving static app from ${loc} on ${srv.address()}`)
+        console.log(`Serving static app from ${loc} on localhost:${devWebserverPort}`)
     });
 })
 
