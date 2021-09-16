@@ -4,19 +4,21 @@ import { Server as StaticServer } from 'node-static';
 
 let srv: Server;
 
-beforeAll(async ({params}) => {
+beforeAll(async ({env, params}) => {
     const loc = (__dirname + "/../app");
     const ss = new(StaticServer)(loc);
 
-    // We use this value for the default in synthetics.config.ts as well
-    const port = 8080;
+    const devWebserverPort = params.devWebserver?.port;
+    if (!devWebserverPort) {
+        return
+    }
     return new Promise(isUp => {
-        console.log(`Serving static app from ${loc}`)
         srv = createServer((req, res) => {
             req.addListener('end', () => {
                 ss.serve(req, res)
             }).resume();
-        }).listen(port, undefined, undefined, () => {isUp()});
+        }).listen(devWebserverPort, undefined, undefined, () => {isUp()});
+        console.log(`Serving static app from ${loc} on ${srv.address()}`)
     });
 })
 
