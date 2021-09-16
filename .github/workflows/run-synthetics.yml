@@ -37,6 +37,7 @@ jobs:
         with:
           node-version: '12.22.3'
       - run: npm install
+      # --quiet-exit-code makes synthetics always exit with a code of 0 even if tests fail so the Junit reporter can run
       - run: "SYNTHETICS_JUNIT_FILE='junit-synthetics.xml' npx @elastic/synthetics . --reporter=junit --quiet-exit-code --params='{\"url\": \"https://elastic.github.io/synthetics-demo/\"} '"
       - name: Publish Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
@@ -44,3 +45,4 @@ jobs:
         with:
           files: '**/junit-*.xml'
           fail_on: "test failures"
+          check_name: Todos Unit Results
