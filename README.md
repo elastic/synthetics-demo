@@ -6,7 +6,4 @@ See the `todos` and `e-commerce` directories, and their respective `README` to f
 
 We run the tests suites contained in each on all PRs and merges. See the `.github/workflows` directory to see sample CI configurations.
 
-## Running via `Heartbeat`
-
-Invoke the synthetic test suites by entering the `heartbeat` folder, then running `./run.sh CLOUD_ID CLOUD_AUTH` using your actual Elastic cloud ID / Auth values
 For deploying via Heartbeat see the `heartbeat` folder.
