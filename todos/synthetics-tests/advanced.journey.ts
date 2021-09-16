@@ -22,7 +22,7 @@ journey('adding and removing multiple tasks', ({ page, params }) => {
   const testTasks = ['Task 1', 'Task 2', 'Task 3'];
 
   loadAppStep(page, params.url);
-  testTasks.forEach(t => {
+  testTasks.forEach((t) => {
     addTaskStep(page, t);
   });
 
