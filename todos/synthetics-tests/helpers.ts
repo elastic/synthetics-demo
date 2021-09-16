@@ -1,6 +1,4 @@
-import { step, Page } from '@elastic/synthetics';
-import * as assert from 'assert';
-import { join } from 'path';
+import { step, Page, expect } from '@elastic/synthetics';
 
 export const loadAppStep = (page: Page, url: string) => {
   step('launch app', async () => {
@@ -24,7 +22,7 @@ export const findTask = async (page: Page, task: string) => {
 
 export const assertTaskListSizeStep = async (page: Page, size: number) => {
   step(`check that task list has exactly ${size} elements`, async () => {
-    assert.deepEqual((await page.$$(todosSelector)).length, size);
+    expect((await page.$$(todosSelector)).length).toBe(size);
   });
 };
 

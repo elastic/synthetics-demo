@@ -1,28 +1,17 @@
 import { beforeAll, afterAll } from '@elastic/synthetics';
+import { once } from 'events';
 import { createServer, Server } from 'http';
+import { join } from 'path';
 import { Server as StaticServer } from 'node-static';
 
 let srv: Server;
 
-beforeAll(async ({env}) => {
-    const loc = (__dirname + "/../app");
-    const ss = new(StaticServer)(loc);
-
-    if (env === "production") {
-        return
-    }
-    return new Promise(isUp => {
-        console.log(`Serving static app from ${loc}`)
-        srv = createServer((req, res) => {
-            req.addListener('end', () => {
-                ss.serve(req, res)
-            }).resume();
-        }).listen(8080, undefined, undefined, () => {isUp()});
-    });
-})
+beforeAll(async () => {
+  const file = new StaticServer(join(__dirname, '..', 'app'));
+  srv = createServer(file.serve.bind(file)).listen(8080);
+  await once(srv, 'listening');
+});
 
 afterAll(async () => {
-    if (srv) {
-        await srv.close();
-    }
-})
+  srv && (await srv.close());
+});
