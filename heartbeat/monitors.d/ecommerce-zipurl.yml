@@ -4,7 +4,7 @@
   schedule: "@every 3m"
   tags: ecommerce-app
   params:
-    url: "https://elastic-synthetics.vercel.app/"
+    url: "https://elastic-synthetics-demo-ecommerce.vercel.app/"
   source:
     zip_url: 
       url: "https://github.com/elastic/synthetics-demo/archive/refs/heads/main.zip"
