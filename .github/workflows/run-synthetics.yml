@@ -6,26 +6,26 @@ on:
   schedule:
     - cron: '* 0 * * *'
 jobs:
-  e-commerce-tests:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: 'e-commerce'
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '12.22.3'
-      - run: npm install
-      - run: "SYNTHETICS_JUNIT_FILE='junit-synthetics.xml' npx @elastic/synthetics . --reporter=junit"
-        continue-on-error: true
-      - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1.19
-        if: always()
-        with:
-          files: '**/junit-*.xml'
-          fail_on: "test failures"
-          check_name: ECommerce Unit Tests
+  # e-commerce-tests:
+  #   runs-on: ubuntu-latest
+  #   defaults:
+  #     run:
+  #       working-directory: 'e-commerce'
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v2
+  #       with:
+  #         node-version: '12.22.3'
+  #     - run: npm install
+  #     - run: "SYNTHETICS_JUNIT_FILE='junit-synthetics.xml' npx @elastic/synthetics . --reporter=junit"
+  #       continue-on-error: true
+  #     - name: Publish Unit Test Results
+  #       uses: EnricoMi/publish-unit-test-result-action@v1.19
+  #       if: always()
+  #       with:
+  #         files: '**/junit-*.xml'
+  #         fail_on: "test failures"
+  #         check_name: ECommerce Unit Tests
   todos_tests:
     runs-on: ubuntu-latest
     defaults:
@@ -37,12 +37,12 @@ jobs:
         with:
           node-version: '12.22.3'
       - run: npm install
-      - run: "SYNTHETICS_JUNIT_FILE='junit-synthetics.xml' npx @elastic/synthetics . --reporter=junit --suite-params='{\"url\": \"https://elastic.github.io/synthetics-demo/\"} '"
-        continue-on-error: true
+      # --quiet-exit-code makes synthetics always exit with a code of 0 even if tests fail so the Junit reporter can run
+      - run: "SYNTHETICS_JUNIT_FILE='junit-synthetics.xml' npx @elastic/synthetics . --reporter=junit --quiet-exit-code --params='{\"url\": \"https://elastic.github.io/synthetics-demo/\"} '"
       - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1.19
+        uses: EnricoMi/publish-unit-test-result-action@v1
         if: always()
         with:
           files: '**/junit-*.xml'
           fail_on: "test failures"
-          check_name: Todos Unit Tests
+          check_name: Todos Unit Results

@@ -1,13 +1,13 @@
 // note that `env` is the `env` argument passed to the synthetics program
 // the default being `development`
 export default (env) => {
-  let url = "http://localhost:8080";
+  const params: {[key: string]: any} = {};
   if (env === "production") {
-    url = "https://elastic.github.io/synthetics-demo/"
+    params.url = "https://elastic.github.io/synthetics-demo/"
+  } else {
+    const port = 8080;
+    params.url = `http://localhost:${8080}`;
+    params.devWebserver = {port};
   }
-  return {
-    params: {
-      url,
-    },
-  };
+  return {params};
 };

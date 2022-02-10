@@ -6,9 +6,14 @@ import { Server as StaticServer } from 'node-static';
 
 let srv: Server;
 
-beforeAll(async () => {
+beforeAll(async ({params}) => {
+  const devWebserverPort = params.devWebserver?.port;
+  if (!devWebserverPort) {
+    return
+  }
+
   const file = new StaticServer(join(__dirname, '..', 'app'));
-  srv = createServer(file.serve.bind(file)).listen(8080);
+  srv = createServer(file.serve.bind(file)).listen(devWebserverPort);
   await once(srv, 'listening');
 });
 
