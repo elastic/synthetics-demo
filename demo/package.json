@@ -1,0 +1,16 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx @elastic/synthetics journeys",
+    "push": "npx @elastic/synthetics push journeys --project demo --url http://localhost:5601 --auth apiKey"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/synthetics": "^1.0.0-beta.27"
+  }
+}

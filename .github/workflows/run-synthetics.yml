@@ -6,11 +6,10 @@ on:
   schedule:
     - cron: '* 0 * * *'
 jobs:
-  todos_tests:
+  synthetic_tests:
     runs-on: ubuntu-latest
     defaults:
-      run:
-        working-directory: 'todos/synthetics-tests'
+        working-directory: 'demo' 
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2

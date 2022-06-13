@@ -1,0 +1,11 @@
+- name: Synthetics Demo
+  id: synthetics-demo
+  type: browser
+  schedule: "@every 3m"
+  tags: synthetics-demo
+  params:
+    url: "https://elastic.github.io/synthetics-demo/"
+  source:
+    zip_url: 
+      url: "https://github.com/elastic/synthetics-demo/archive/refs/heads/main.zip"
+      folder: "demo"
