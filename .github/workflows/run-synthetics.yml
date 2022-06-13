@@ -9,7 +9,8 @@ jobs:
   synthetic_tests:
     runs-on: ubuntu-latest
     defaults:
-        working_directory: 'demo' 
+      run:
+        working-directory: 'demo' 
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
