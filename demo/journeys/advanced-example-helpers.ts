@@ -1,5 +1,9 @@
 import { step, Page, expect } from '@elastic/synthetics';
 
+// This file contains helper files for advanced-example.journey.ts
+// The functions here let you write more concise tests  and re-use functionality
+// across tests.
+
 export const loadAppStep = (page: Page, url: string) => {
   step('launch app', async () => {
     await page.goto(url);

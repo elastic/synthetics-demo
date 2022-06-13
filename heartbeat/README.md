@@ -1,5 +1,9 @@
 # Example Heartbeat configs
 
+It is generally now advised to run synthetics projects by pushing them to kibana first.
+See our [documentation](https://www.elastic.co/guide/en/observability/master/synthetic-monitoring.html)
+for more info.
+
 This folder contains sample heartbeat configurations for the demos in this repository.
 
 The interesting bits are mostly in the `monitors.d` folder, where we've broken out example
