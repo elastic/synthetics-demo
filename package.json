@@ -1,7 +1,7 @@
 {
   "name": "synthetics-demo",
   "version": "1.0.0",
-  "description": "This repository contains examples of Elastic Synthetics configurations, and instructions for running them both locally, via CI, and via Heartbeat.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "npx @elastic/synthetics journeys",
