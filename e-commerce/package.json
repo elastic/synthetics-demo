@@ -6,6 +6,9 @@
     "test": "npx elastic-synthetics ."
   },
   "dependencies": {
-    "@elastic/synthetics": "^1.0.0-beta"
+    "@elastic/synthetics": "^1.0.0-beta.31",
+    "jsqr": "^1.4.0",
+    "png.js": "^0.2.1",
+    "totp-generator": "^0.0.13"
   }
 }
