@@ -1,13 +1,27 @@
-// note that `env` is the `env` argument passed to the synthetics program
-// the default being `development`
-export default (env) => {
-  let url = "http://localhost:8080";
-  if (env === "production") {
-    url = "https://elastic.github.io/synthetics-demo/"
-  }
-  return {
+import type { SyntheticsConfig } from '@elastic/synthetics';
+
+export default env => {
+  const config: SyntheticsConfig = {
     params: {
-      url,
+      url: 'https://elastic.github.io/synthetics-demo/',
+    },
+    playwrightOptions: {
+      ignoreHTTPSErrors: false,
+    },
+    /**
+     * Configure global monitor settings
+     */
+    monitor: {
+      schedule: 10,
+      locations: ['us_west'],
+      privateLocations: [''],
     },
   };
+  if (env !== 'development') {
+    /**
+     * Override configuration specific to environment
+     * Ex: config.params.url = ""
+     */
+  }
+  return config;
 };

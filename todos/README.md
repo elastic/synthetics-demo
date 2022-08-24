@@ -1,27 +1,21 @@
-# Example Elastic Synthetics TODOS Project
+## Get started with Elastic Synthetics!
 
-This suite tests the todo examples that ship with the open source Vue.js project, located in the 'app' directory.
+Browse the directory structure here to see an example skeleton of an [Elastic Synthetics](https://www.elastic.co/observability/synthetic-monitoring) project.
+Make sure to [read the docs](https://www.elastic.co/guide/en/observability/current/monitor-uptime-synthetics.html) as well if you're unfamiliar with Elastic Synthetics.
 
-## Running via `@elastic/synthetics`
+This directory was created with the command `npx @elastic/synthetics <target-directory>`, with `<target-directory>` being the name of the directory you'd like it to make.
+You can always use this command to scafold new Synthetics projects.
 
-We can invoke the Synthetics runner from the CLI using the below steps. Note that this example uses a global
-`elastic-synthetics` command installed via `npm -g`. For an example using only local dependencies see the
-`e-commerce demo`.
+Key places to look:
 
-```sh
-# Install the global command
-npm install -g @elastic/synthetics 
+- The `synthetics.config.ts` file contains configuration for your project.
+- The `journeys` directory contains both basic and more advanced examples of using synthetics. It tests a publicly hosted [Todos List](https://elastic.github.io/synthetics-demo/).
+- The `.github` directory contains an example github action, demonstrating the use of a CI service for automatically running tests on merges and PR creation.
 
-# Enter the tests directory
-cd synthetics-tests && npm install; cd ..
+To run the tests locally, use the following command:
 
-# Invoke the runner and show test results
-elastic-synthetics synthetics-tests
+```bash
+npm run test
 ```
 
-This project uses a `synthetics.config.ts` file to seed some initial variables. This file must be in the current folder or a parent of it when the `elastic-synthetics` command is invoked OR specified with the `--config` flag. This
-file is normally placed at the root of the project.
-
-## Running via Heartbeat
-
-See the `heartbeat` folder at the root of this repository for information on running with Heartbeat.
+Curious to learn more? [Read the docs](https://www.elastic.co/guide/en/observability/current/monitor-uptime-synthetics.html) to learn about pushing configurations to an Elastic cloud stack and more.
