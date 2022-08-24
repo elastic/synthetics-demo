@@ -1,4 +1,4 @@
-name: Advaced Examples Synthetics Tests
+name: Advanced Examples Synthetics Tests
 on:
   push:
     branches: [main, master]
