@@ -1,21 +1,11 @@
 ## Get started with Elastic Synthetics!
 
-Browse the directory structure here to see an example skeleton of an [Elastic Synthetics](https://www.elastic.co/observability/synthetic-monitoring) project.
-Make sure to [read the docs](https://www.elastic.co/guide/en/observability/current/monitor-uptime-synthetics.html) as well if you're unfamiliar with Elastic Synthetics.
+### Do not copy this folder!
 
-This directory was created with the command `npx @elastic/synthetics <target-directory>`, with `<target-directory>` being the name of the directory you'd like it to make.
-You can always use this command to scafold new Synthetics projects.
+These files were generated with the command:
 
-Key places to look:
+`npx @elastic/synthetics init <projectname>`
 
-- The `synthetics.config.ts` file contains configuration for your project.
-- The `journeys` directory contains both basic and more advanced examples of using synthetics. It tests a publicly hosted [Todos List](https://elastic.github.io/synthetics-demo/).
-- The `.github` directory contains an example github action, demonstrating the use of a CI service for automatically running tests on merges and PR creation.
+Rather than pull down this example it's a better idea to generate a fresh project yourself!
 
-To run the tests locally, use the following command:
-
-```bash
-npm run test
-```
-
-Curious to learn more? [Read the docs](https://www.elastic.co/guide/en/observability/current/monitor-uptime-synthetics.html) to learn about pushing configurations to an Elastic cloud stack and more.
+See the [Synthetics docs](https://www.elastic.co/guide/en/observability/master/monitor-uptime-synthetics.html) for more information.
