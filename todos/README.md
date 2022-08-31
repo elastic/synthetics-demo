@@ -1,27 +1,11 @@
-# Example Elastic Synthetics TODOS Project
+## Get started with Elastic Synthetics!
 
-This suite tests the todo examples that ship with the open source Vue.js project, located in the 'app' directory.
+### Do not copy this folder!
 
-## Running via `@elastic/synthetics`
+These files were generated with the command:
 
-We can invoke the Synthetics runner from the CLI using the below steps. Note that this example uses a global
-`elastic-synthetics` command installed via `npm -g`. For an example using only local dependencies see the
-`e-commerce demo`.
+`npx @elastic/synthetics init <projectname>`
 
-```sh
-# Install the global command
-npm install -g @elastic/synthetics 
+Rather than pull down this example it's a better idea to generate a fresh project yourself!
 
-# Enter the tests directory
-cd synthetics-tests && npm install; cd ..
-
-# Invoke the runner and show test results
-elastic-synthetics synthetics-tests
-```
-
-This project uses a `synthetics.config.ts` file to seed some initial variables. This file must be in the current folder or a parent of it when the `elastic-synthetics` command is invoked OR specified with the `--config` flag. This
-file is normally placed at the root of the project.
-
-## Running via Heartbeat
-
-See the `heartbeat` folder at the root of this repository for information on running with Heartbeat.
+See the [Synthetics docs](https://www.elastic.co/guide/en/observability/master/monitor-uptime-synthetics.html) for more information.
