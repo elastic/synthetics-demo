@@ -16,7 +16,6 @@ jobs:
           node-version: 16
       - run: npm install
       - run: "SYNTHETICS_JUNIT_FILE='junit-synthetics.xml' npx @elastic/synthetics . --reporter=junit"
-        continue-on-error: true
       - name: Publish Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1.19
         if: always()
