@@ -4,7 +4,7 @@ jobs:
   push-monitors:
     defaults:
       run:
-        working-directory: ./cloud-demo
+        working-directory: cloud-demo
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
