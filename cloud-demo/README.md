@@ -18,4 +18,4 @@ To run the tests locally, use the following command:
 npm run test
 ```
 
-Curious to learn more? [Read the docs](https://www.elastic.co/guide/en/observability/current/monitor-uptime-synthetics.html) to learn about pushing configurations to an Elastic cloud stack and more.
+Curious to learn more? ok [Read the docs](https://www.elastic.co/guide/en/observability/current/monitor-uptime-synthetics.html) to learn about pushing configurations to an Elastic cloud stack and more.
