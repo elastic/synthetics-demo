@@ -13,7 +13,5 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-        env:
-          CLOUD_DEMO_API_KEY: ${{ secrets.CLOUD_DEMO_API_KEY }}
       - run: npm install
       - run: npx @elastic/synthetics push --auth ${{ env.CLOUD_DEMO_API_KEY }}
