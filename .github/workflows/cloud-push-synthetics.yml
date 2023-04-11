@@ -1,5 +1,7 @@
 on:
   push:
+env:
+  CLOUD_DEMO_API_KEY: ${{ secrets.CLOUD_DEMO_API_KEY }}
 jobs:
   push-monitors:
     defaults:
