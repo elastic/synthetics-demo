@@ -22,7 +22,6 @@ export default (env) => {
     project: {
       id: "project-monitors-demo",
       url: "https://project-monitors-demo.kb.us-central1.gcp.cloud.es.io:9243/",
-      // url: 'https://project-monitors-demo.kb.us-central1.gcp.cloud.es.io:9243/',
       space: "default",
     },
   };
