@@ -17,4 +17,4 @@ jobs:
         with:
           node-version: 18
       - run: npm install
-      - run: npx @elastic/synthetics push --auth ${{ env.CLOUD_DEMO_API_KEY }}
+      - run: env SYNTHETICS_API_KEY=${{ env.CLOUD_DEMO_API_KEY }} npx @elastic/synthetics push
