@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [main, master]
 env:
-  SYNTHETICS_API_KEY: ${{ secrets.CLOUD_DEMO_API_KEY }}
+  SYNTHETICS_API_KEY: ${{ secrets.SYNTHETICS_API_KEY }}
 jobs:
   push-monitors:
     defaults:
