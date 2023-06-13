@@ -1,6 +1,6 @@
 {
   "name": "cloud-demo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@elastic/synthetics": "^1.0.0-beta.43"
+    "@elastic/synthetics": "^1.1.0"
   }
 }
