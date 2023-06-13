@@ -1,6 +1,6 @@
 import type { SyntheticsConfig } from '@elastic/synthetics';
 
-export default env => {
+export default (env) => {
   const config: SyntheticsConfig = {
     params: {
       url: 'https://elastic.github.io/synthetics-demo/',
@@ -13,22 +13,22 @@ export default env => {
      */
     monitor: {
       schedule: 10,
-      locations: ['germany','us_east'],
+      locations: ['germany', 'us_east'],
       privateLocations: [''],
     },
     /**
      * Project monitors settings
      */
     project: {
-      id: 'cloud-demo',
-      url: 'https://berlin-meetup-8-8-prod.kb.us-west2.gcp.elastic-cloud.com:9243/',
-      space: 'push-cloud',
+      id: 'project-monitors-demo',
+      url: 'https://project-monitors-demo.kb.us-central1.gcp.cloud.es.io:9243/',
+      space: 'default',
     },
   };
   if (env !== 'development') {
     /**
      * Override configuration specific to environment
-     * Ex: config.params.url = ""
+     * Ex: config.params.url = ''
      */
   }
   return config;

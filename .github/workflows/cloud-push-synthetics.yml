@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [main, master]
 env:
-  CLOUD_DEMO_API_KEY: ${{ secrets.CLOUD_DEMO_API_KEY }}
+  SYNTHETICS_API_KEY: ${{ secrets.SYNTHETICS_API_KEY }}
 jobs:
   push-monitors:
     defaults:
@@ -17,4 +17,4 @@ jobs:
         with:
           node-version: 18
       - run: npm install
-      - run: npx @elastic/synthetics push --auth ${{ env.CLOUD_DEMO_API_KEY }}
+      - run: npx @elastic/synthetics push
