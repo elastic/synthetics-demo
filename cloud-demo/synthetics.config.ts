@@ -20,9 +20,9 @@ export default env => {
      * Project monitors settings
      */
     project: {
-      id: 'cloud-demo',
-      url: 'https://berlin-meetup-8-8-prod.kb.us-west2.gcp.elastic-cloud.com:9243/',
-      space: 'push-cloud',
+      id: 'project-monitors-demo',
+      url: 'https://project-monitors-demo.kb.us-central1.gcp.cloud.es.io:9243/',
+      space: 'default',
     },
   };
   if (env !== 'development') {
