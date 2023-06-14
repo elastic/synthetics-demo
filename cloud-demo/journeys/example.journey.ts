@@ -1,19 +1,19 @@
-import { journey, step, monitor, expect } from "@elastic/synthetics";
+import { journey, step, monitor, expect } from '@elastic/synthetics';
 
-journey("My Example Journey", ({ page, params }) => {
+journey('My Example Journey', ({ page, params }) => {
   // Only relevant for the push command to create
   // monitors in Kibana
   monitor.use({
-    id: "example-monitor",
+    id: 'example-monitor',
     schedule: 10,
   });
 
-  step("launch application", async () => {
+  step('launch application', async () => {
     await page.goto(params.url);
   });
 
-  step("assert title", async () => {
-    const header = page.locator("h1");
-    expect(await header.textContent()).toBe("todos");
+  step('assert title', async () => {
+    const header = page.locator('h1');
+    expect(await header.textContent()).toBe('todos');
   });
 });
