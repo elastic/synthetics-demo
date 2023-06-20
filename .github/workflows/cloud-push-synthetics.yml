@@ -1,8 +1,8 @@
 on:
   push:
     branches: [main, master]
-  pull_request:
-    branches: [main, master]
+      #  pull_request:
+      #    branches: [main, master]
 env:
   SYNTHETICS_API_KEY: ${{ secrets.SYNTHETICS_API_KEY }}
 jobs:
