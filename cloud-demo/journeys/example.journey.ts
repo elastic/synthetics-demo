@@ -7,12 +7,13 @@ journey('My Example Journey', ({ page, params }) => {
     id: 'example-monitor',
     schedule: 10,
   });
+
   step('launch application', async () => {
     await page.goto(params.url);
   });
 
   step('assert title', async () => {
-    const header = await page.locator('h1');
+    const header = page.locator('h1');
     expect(await header.textContent()).toBe('todos');
   });
 });
