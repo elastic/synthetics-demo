@@ -1,0 +1,11 @@
+heartbeat.monitors:
+- type: http
+  name: Todos Lightweight
+  id: todos-lightweight
+  enabled: true
+  urls: "${devUrl}"
+  schedule: '@every 3m'
+  timeout: 16s
+  check.response.status: [ 404 ]
+  check.response.body.positive: [ "Unknown resource." ]
+

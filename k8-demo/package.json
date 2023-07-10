@@ -1,0 +1,22 @@
+{
+  "name": "test-projects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "read": "npx ts-node utils/server.ts",
+    "push": "npm i && npm run read && npx @elastic/synthetics push"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@kubernetes/client-node": "^0.18.1",
+    "@types/node": "^20.4.1",
+    "js-yaml": "^4.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6",
+    "@elastic/synthetics": "file:../elastic-synthetics-1.1.0.tgz"
+  }
+}

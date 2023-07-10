@@ -1,0 +1,42 @@
+heartbeat.monitors:
+  - check.response.status:
+      - '303'
+      - '307'
+      - '200'
+    id: eu.test9.apikey-test.cw-with-api-key
+    name: cw-with-api-key-apikey-test
+    schedule: '@every 10s'
+    type: http
+    urls: https://cw-with-api-key-apikey-test.eu.test9.external.byp.ai/health
+    ssl.verification_mode: none
+    tags:
+      - kubernetes
+  - check.response.status:
+      - '200'
+      - '201'
+      - '303'
+    id: frontend-service-monitor-id-1234
+    name: frontend-service
+    schedule: '@every 10s'
+    type: http
+    urls: frontend.frontend.svc.cluster.local:80/_healthz
+    tags:
+      - kubernetes
+  - check.response.status:
+      - '200'
+      - '201'
+      - '303'
+    id: frontend-external-service-monitor-id-1234
+    name: frontend-external-service
+    schedule: '@every 10s'
+    type: http
+    urls: frontend-external.frontend.svc.cluster.local:80/_healthz
+    tags:
+      - kubernetes
+  - id: productcatalogservice-service-monitor-id-1234
+    name: product-catalog-service
+    schedule: '@every 10s'
+    type: tcp
+    tags:
+      - kubernetes
+    hosts: productcatalogservice.product-catalog.svc.cluster.local:3550
