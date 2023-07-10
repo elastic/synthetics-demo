@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "read": "npx ts-node utils/server.ts",
+    "read": "npx ts-node utils/parse_k8_services.ts",
     "push": "npm i && npm run read && npx @elastic/synthetics push"
   },
   "keywords": [],
