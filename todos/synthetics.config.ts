@@ -3,7 +3,7 @@ import type { SyntheticsConfig } from '@elastic/synthetics';
 export default env => {
   const config: SyntheticsConfig = {
     params: {
-      url: 'https://elastic.github.io/synthetics-demo/',
+    // url: 'https://elastic.github.io/synthetics-demo/',
     },
     playwrightOptions: {
       ignoreHTTPSErrors: false,
@@ -15,6 +15,11 @@ export default env => {
       schedule: 10,
       locations: ['us_west'],
       privateLocations: [],
+    },
+    project: {
+      id: 'todos',
+      url: 'YOUR_KIBANA_URL',
+      space: 'default',
     },
   };
   if (env !== 'development') {
