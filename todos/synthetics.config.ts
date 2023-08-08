@@ -14,7 +14,7 @@ export default env => {
     monitor: {
       schedule: 10,
       locations: ['us_west'],
-      privateLocations: [''],
+      privateLocations: [],
     },
   };
   if (env !== 'development') {
