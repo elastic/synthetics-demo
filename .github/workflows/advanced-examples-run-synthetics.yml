@@ -6,6 +6,10 @@ on:
     branches: [main, master]
   schedule:
     - cron: '* 0 * * *'
+permissions:
+  contents: read
+  checks: write
+
 jobs:
   test:
     defaults:
